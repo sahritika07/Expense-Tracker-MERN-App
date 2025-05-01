@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom'
 
 const Expense = () => {
   return (
@@ -9,3 +10,5 @@ const Expense = () => {
 }
 
 export default Expense
+
+
