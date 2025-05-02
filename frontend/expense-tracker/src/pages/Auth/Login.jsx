@@ -22,6 +22,7 @@ const Login = () => {
       <p className="text-xs text-slate-700 mt-[5px] mb-6">
         Please enter your details to log in
       </p>
+      
         
 
       <form onSubmit={handleLogin}>
