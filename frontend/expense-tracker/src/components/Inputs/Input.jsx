@@ -16,7 +16,7 @@ const Input = ({value, onChange, placeholder, label, type}) => {
         placeholder={placeholder}
         className='w-full bg-transparent outline-none'
         value={value}
-        onChange={(e) => onchange(e)}
+        onChange={(e) => onChange(e)}
         />
 
         {type == "password" && (
@@ -25,13 +25,13 @@ const Input = ({value, onChange, placeholder, label, type}) => {
                 <FaRegEye
                    size={22}
                    className='text-primary cursor-pointer'
-                   onClick={()=> toggleShowPassword}
+                   onClick={()=> toggleShowPassword()}
                    />
             ) : (
                 <FaRegEyeSlash
                    size={22}
                    className='text-slate-400 cursor-pointer'
-                   onClick={()=> toggleShowPassword}
+                   onClick={()=> toggleShowPassword()}
                    />
             )}
             </>
