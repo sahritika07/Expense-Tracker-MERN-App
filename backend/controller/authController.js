@@ -71,3 +71,4 @@ exports.getUserInfo = async(req,res)=>{
         res.status(500).json({message: "Error while registering user", error:error.message})
     }
 };
+
