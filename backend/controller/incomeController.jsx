@@ -24,8 +24,28 @@ exports.addIncome = async(req,res)=> {
     }
 }
 
-exports.getAllIncome = async(req,res)=> {}
+exports.getAllIncome = async(req,res)=> {
+    const userId = req.user.id;
+    try {
+        const income = await Income.find({userId}).sort({date: -1});
+        res.json(income);
+    } catch (error) {
+        res.status(500).json({ message: "Server Error", error: error.message });
+    } 
+}
 
-exports.deleteIncome = async(req,res)=> {}
+exports.deleteIncome = async (req, res) => {
+    try {
+        const deletedIncome = await Income.findByIdAndDelete(req.params.id);
+
+        if (!deletedIncome) {
+            return res.status(404).json({ message: "Income record not found" });
+        }
+
+        res.json({ message: "Income deleted successfully" });
+    } catch (error) {
+        res.status(500).json({ message: "Server Error", error: error.message });
+    }
+};
 
 exports.downloadIncomeExcel = async(req,res)=> {}
