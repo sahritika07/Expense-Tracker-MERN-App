@@ -11,6 +11,7 @@ exports.protect = async(req,res,next) =>{
       req.user = await User.findById(decoded.id).select('-password');
       next();  
     } catch (error) {
-        res.status(401),json({message: "Not authorised, token failed"})
+         console.error("Add Income Error:", error);
+        res.status(401).json({message: "Not authorised, token failed"})
     }
 }

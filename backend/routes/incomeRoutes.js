@@ -1,6 +1,6 @@
 const express = require("express");
 
-const {addIncome, getAllIncome, deleteIncome, downloadIncomeExcel} = require("../controller/incomeControllere");
+const {addIncome, getAllIncome, deleteIncome, downloadIncomeExcel} = require("../controller/incomeController.jsx");
 const {protect} = require("../middleware/authMiddleware")
 
 const router = express.Router();
