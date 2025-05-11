@@ -28,11 +28,12 @@ const Login = () => {
        }
 
        setError("");
-  }
+
 
   try{
     const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, {
-      email,password,
+      email,
+      password,
     });
     const {token,user} = response.data;
 
@@ -47,7 +48,9 @@ const Login = () => {
       setError("Something went wrong. Plase try again");
     }
     }
-  }
+
+      }
+  
 
   return (
     <AuthLayout>
