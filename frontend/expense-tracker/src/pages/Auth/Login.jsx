@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import AuthLayout from '../../components/layouts/AuthLayout'
 import {Link, useNavigate} from 'react-router-dom'
 import Input from '../../components/Inputs/Input.jsx'
 import { validateEmail } from '../../utils/helper.js'
 import axiosInstance from '../../utils/axiosInstance.js'
 import { API_PATHS } from '../../utils/apiPaths.js'
+import { userContext } from '../../context/userContext.jsx'
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -12,6 +13,8 @@ const Login = () => {
   const [error, setError] = useState(null)
 
   const navigate = useNavigate();
+
+  const  {updateUser } = useContext(userContext)
 
   // Handle login Form Submit 
   const handleLogin = async(e)=>{
@@ -39,6 +42,7 @@ const Login = () => {
 
     if(token) {
       localStorage.setItem("token", token);
+      updateUser(user)
       navigate("/dashboard");
     }
   } catch (error){
