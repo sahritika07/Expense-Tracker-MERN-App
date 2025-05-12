@@ -6,7 +6,7 @@ import { validateEmail } from '../../utils/helper.js'
 import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector.jsx'
 import axiosInstance from '../../utils/axiosInstance.js'
 import { API_PATHS } from '../../utils/apiPaths.js'
-import { userContext } from '../../context/userContext.jsx'
+import { UserContext } from '../../context/UserContext.jsx'
 import uploadImage from '../../utils/uploadImage.js'
 
 const SignUp = () => {
@@ -19,7 +19,7 @@ const SignUp = () => {
   const [error, setError] = useState(null)
 
   const navigate = useNavigate();
-  const {updateUser} = useContext(userContext)
+  const {updateUser} = useContext(UserContext)
 
   const handleSignUp = async (e) => {
     e.preventDefault();

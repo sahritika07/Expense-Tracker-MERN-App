@@ -5,7 +5,7 @@ import Input from '../../components/Inputs/Input.jsx'
 import { validateEmail } from '../../utils/helper.js'
 import axiosInstance from '../../utils/axiosInstance.js'
 import { API_PATHS } from '../../utils/apiPaths.js'
-import { userContext } from '../../context/userContext.jsx'
+import { UserContext } from '../../context/UserContext.jsx'
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -14,7 +14,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const  {updateUser } = useContext(userContext)
+  const  {updateUser } = useContext(UserContext)
 
   // Handle login Form Submit 
   const handleLogin = async(e)=>{
