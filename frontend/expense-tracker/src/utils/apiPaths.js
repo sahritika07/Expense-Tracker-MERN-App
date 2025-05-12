@@ -7,7 +7,7 @@ export const API_PATHS={
         GET_USER_INFO:"/api/v1/auth/getUser",
     },
     DASHBOARD:{
-        GET_DATA:"/api/v1/auth/dashboard",
+        GET_DATA:"/api/v1/dashboard",
     },
     INCOME:{
         ADD_INCOME:"/api/v1/income/add",
@@ -15,7 +15,7 @@ export const API_PATHS={
         DELETE_INCOME: (incomeId) => `/api/v1/income/${incomeId}`,
         DOWNLOAD_INCOME: `api/v1/income/downloadexcel`,    
     },
-    INCOME:{
+    EXPENSE:{
         ADD_EXPENSE:"/api/v1/income/add",
         GET_ALL_EXPENSE:"/api/v1/income/get",
         EXPENSE: (expenseId) => `/api/v1/income/${expenseId}`,
