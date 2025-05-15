@@ -27,4 +27,5 @@ const FinanceOverview = ({totalBalance,totalExpense,totalIncome}) => {
   )
 }
 
+
 export default FinanceOverview
