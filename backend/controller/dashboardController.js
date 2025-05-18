@@ -17,7 +17,7 @@ exports.getDashboardData = async(req,res)=>{
             {$match: {userId: userObjectId}},
             {$group: {_id:null, total: {$sum: "$amount"}}},
         ]);
-        console.log("total Expense", {totalExpense, userId: isValidObjectId(userId)});
+        // console.log("total Expense", {totalExpense, userId: isValidObjectId(userId)});
 
         const last60DaysIncomeTransactions = await Income.find({
             userId,
@@ -65,6 +65,8 @@ exports.getDashboardData = async(req,res)=>{
               total: expenseLast30Days,
               transactions: last30DaysExpenseTransactions,
             },
+            
+
           
             last60DaysIncome: {
               total: incomeLast60Days,
