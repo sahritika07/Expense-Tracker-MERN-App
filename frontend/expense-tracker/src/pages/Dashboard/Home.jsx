@@ -13,6 +13,7 @@ import RecentTransactions from '../../components/Dashboard/RecentTransactions';
 import FinanceOverview from '../../components/Dashboard/FinanceOverview';
 import ExpenseTransactions from './ExpenseTransactions.jsx';
 import Last30DaysExpenses from './Last30DaysExpenses.jsx';
+import RecentIncomeWithChart from './RecentIncomeWithChart.jsx';
 
 const Home = () => {
   useUserAuth();
@@ -40,13 +41,14 @@ const Home = () => {
     setLoading(false);
   }
   };
+  
 
   useEffect(() => {
     fetchDashboardData();
     return () => {};
   } , [])
 
-  // console.log("Line 45---",dashboardData)
+  console.log("Line 45---",dashboardData)
   
   
   return (
@@ -90,6 +92,10 @@ const Home = () => {
 
         <Last30DaysExpenses
         data={dashboardData?.last30DaysExpenses?.transactions || []}/>
+
+        <RecentIncomeWithChart
+        data={dashboardData?.Last60DaysIncome?.transactions?.slice(0,4) || []}
+        totalIncome={dashboardData?.totalIncome || 0}/>
 
         </div>
       </div>
